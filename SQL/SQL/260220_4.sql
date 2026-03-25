@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS dave
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+
+USE dave;
+
+CREATE TABLE IF NOT EXISTS mytable (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    modelnumber VARCHAR(15) NOT NULL,
+    series VARCHAR(30) NOT NULL
+);
+
+SHOW DATABASES;
+
+DESC mytable;
+
+SELECT * FROM mytable;
+
+ALTER TABLE mytable MODIFY COLUMN name VARCHAR(20) NOT NULL;
+ALTER TABLE mytable CHANGE COLUMN modelnumber model_num VARCHAR(10) NOT NULL;
+ALTER TABLE mytable CHANGE COLUMN series model_type VARCHAR(10) NOT NULL;
+
+ALTER TABLE mytable
+	MODIFY COLUMN name VARCHAR(20) NOT NULL,
+    CHANGE COLUMN modelnumber model_num VARCHAR(10) NOT NULL,
+    CHANGE COLUMN series model_type VARCHAR(10) NOT NULL;
+
+
+
+
